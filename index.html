@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Puffer Club - Boutique Officielle</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <header class="hero-section" id="puffer">
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fa-solid fa-mountain"></i>
+                <span>PUFFER CLUB</span>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#puffer" class="active">PUFFER</a></li>
+                <li><a href="#collection">COLLECTION</a></li>
+                <li><a href="#story">NOTRE HISTOIRE</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="icon-btn" id="cartToggle" aria-label="Ouvrir le panier"><i class="fa-solid fa-cart-shopping"></i><span class="badge" id="cartCount">0</span></button>
+                <button class="icon-btn" id="accountToggle" type="button" aria-label="Créer un compte ou se connecter"><i class="fa-solid fa-user"></i></button>
+                <button class="icon-btn" id="favoritesToggle" type="button" aria-label="Afficher mes favoris">
+                    <i class="fa-solid fa-heart"></i>
+                    <span class="badge" id="favoritesCount" aria-hidden="true" hidden>0</span>
+                </button>
+            </div>
+        </nav>
+
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>STAND OUT.<br>STAY WARM.</h1>
+                <p>La doudoune courte Puffer Club mise sur une silhouette affirmée et des coloris audacieux pour compléter vos tenues de saison.</p>
+                <div class="hero-actions">
+                    <a href="#collection" class="btn-primary">DÉCOUVRIR <i class="fa-solid fa-arrow-right"></i></a>
+                    <button class="btn-primary btn-secondary-hero add-to-cart" type="button" data-name="Puffer Crop" data-product-id="puffer-crop" data-price-source="hero">AJOUTER AU PANIER</button>
+                </div>
+            </div>
+
+            <div class="hero-image-container">
+                <div class="main-jacket-glow"></div>
+                <img src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=800&q=80" alt="Doudoune Orange Puffer Club" class="floating-jacket" id="mainImage">
+            </div>
+
+            <div class="hero-sidebar">
+                <div class="price-box">
+                    <span class="current-price" id="mainPrice">149 €</span>
+                </div>
+                
+                <div class="selector-group">
+                    <label>Choisissez votre taille :</label>
+                    <div class="sizes">
+                        <button class="size-btn active" type="button" aria-pressed="true">S</button>
+                        <button class="size-btn" type="button" aria-pressed="false">M</button>
+                        <button class="size-btn" type="button" aria-pressed="false">L</button>
+                        <button class="size-btn" type="button" aria-pressed="false">XL</button>
+                    </div>
+                </div>
+
+                <div class="selector-group">
+                    <label>Couleur :</label>
+                    <div class="colors">
+                        <button class="color-dot orange active" type="button" aria-label="Orange" aria-pressed="true" data-color="Orange" data-price="149" data-img="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=800&q=80"></button>
+                        <button class="color-dot black" type="button" aria-label="Noir" aria-pressed="false" data-color="Noir" data-price="159" data-img="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=800&q=80"></button>
+                        <button class="color-dot cream" type="button" aria-label="Crème" aria-pressed="false" data-color="Crème" data-price="169" data-img="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80"></button>
+                        <button class="color-dot green" type="button" aria-label="Vert" aria-pressed="false" data-color="Vert" data-price="149" data-img="https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=800&q=80"></button>
+                    </div>
+                </div>
+
+                <!-- Vignette miniature cliquable -->
+                <div class="thumbnail-preview" id="thumbSwitch">
+                    <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=200&q=80" alt="Miniature Noir">
+                    <div class="thumb-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-footer">
+            <div class="socials">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+            <div class="slogan">L'AUDACE AU CHAUD</div>
+        </div>
+    </header>
+
+    <p class="checkout-notice" id="checkoutNotice" role="status" hidden></p>
+
+    <section class="feature-band reveal">
+        <div class="feature-item">
+            <i class="fa-solid fa-snowflake"></i>
+            <div>
+            <h3>Style au quotidien</h3>
+            <p>Des silhouettes faciles à porter en ville.</p>
+            </div>
+        </div>
+        <div class="feature-item">
+            <i class="fa-solid fa-shirt"></i>
+            <div>
+                <h3>Confort</h3>
+                <p>Choisissez votre coupe et votre taille préférées.</p>
+            </div>
+        </div>
+        <div class="feature-item">
+            <i class="fa-solid fa-truck-fast"></i>
+            <div>
+                <h3>Livraison</h3>
+                <p>Les délais et frais sont à confirmer avant lancement.</p>
+            </div>
+        </div>
+        <div class="feature-item">
+            <i class="fa-solid fa-shield-heart"></i>
+            <div>
+                <h3>Questions ?</h3>
+                <p>Contactez-nous pour obtenir de l’aide sur votre commande.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="story-section reveal" id="story">
+        <div class="story-text">
+            <span class="eyebrow">POUR LES JOURNÉES FRAÎCHES</span>
+            <h2>La doudoune qui suit votre rythme.</h2>
+            <p>Découvrez une sélection de doudounes aux coupes et coloris variés, pensées pour compléter vos tenues du quotidien.</p>
+            <ul class="story-points">
+                <li><i class="fa-solid fa-check"></i> Coupe ajustée et confortable</li>
+                <li><i class="fa-solid fa-check"></i> Plusieurs coloris disponibles</li>
+                <li><i class="fa-solid fa-check"></i> Tailles du S au XL</li>
+            </ul>
+            <a href="#collection" class="btn-secondary">Découvrir la collection</a>
+        </div>
+        <div class="story-visual">
+            <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80" alt="Visuel d’inspiration mode, photo d’illustration">
+        </div>
+    </section>
+
+    <section class="reviews-section reveal">
+        <div class="section-heading">
+            <span class="eyebrow">VOS RETOURS</span>
+            <h2>Votre avis compte.</h2>
+        </div>
+        <div class="review-placeholder">
+            <i class="fa-regular fa-message"></i>
+            <p>Les avis clients seront publiés ici après les premiers retours vérifiés.</p>
+        </div>
+    </section>
+
+    <!-- COLLECTION SECTION -->
+    <section class="collection-section" id="collection">
+        <div class="collection-header">
+            <div>
+                <span class="eyebrow">LA COLLECTION</span>
+                <h2>Nos Collections Phares</h2>
+            </div>
+            <div class="filter-pills">
+                <button class="pill active" type="button" data-filter="all" aria-pressed="true">Tout</button>
+                <button class="pill" type="button" data-filter="new" aria-pressed="false">Nouveautés</button>
+                <button class="pill" type="button" data-filter="urban" aria-pressed="false">Urban</button>
+                <button class="pill" type="button" data-filter="premium" aria-pressed="false">Premium</button>
+                <button class="pill" type="button" data-filter="favorites" aria-pressed="false">Favoris</button>
+            </div>
+            <p class="favorites-status" id="favoritesStatus" role="status" aria-live="polite"></p>
+        </div>
+        <div class="products-grid">
+            <!-- Produit 1 -->
+            <div class="product-card" data-category="urban">
+                <div class="product-img">
+                    <button class="favorite-toggle" type="button" aria-pressed="false" aria-label="Ajouter Puffer Crop Orange aux favoris">
+                        <i class="fa-regular fa-heart" aria-hidden="true"></i>
+                    </button>
+                    <img src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=500&q=80" alt="Puffer Crop Orange">
+                </div>
+                <div class="product-info">
+                    <h3>Puffer Crop Orange</h3>
+                    <p>Doudoune courte unisexe</p>
+                    <div class="card-size-selector" role="group" aria-label="Choisir la taille de Puffer Crop Orange">
+                        <span>Taille</span>
+                        <div class="card-sizes">
+                            <button class="card-size-button active" type="button" data-size="S" aria-pressed="true">S</button>
+                            <button class="card-size-button" type="button" data-size="M" aria-pressed="false">M</button>
+                            <button class="card-size-button" type="button" data-size="L" aria-pressed="false">L</button>
+                            <button class="card-size-button" type="button" data-size="XL" aria-pressed="false">XL</button>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <div class="card-price">
+                            <span class="current">149 €</span>
+                        </div>
+                        <div class="mini-colors">
+                            <button class="dot orange active" type="button" aria-label="Orange" aria-pressed="true" data-color="Orange" data-price="149" data-img="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=500&q=80"></button>
+                            <button class="dot black" type="button" aria-label="Noir" aria-pressed="false" data-color="Noir" data-price="159" data-img="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=500&q=80"></button>
+                            <button class="dot cream" type="button" aria-label="Crème" aria-pressed="false" data-color="Crème" data-price="169" data-img="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=500&q=80"></button>
+                            <button class="dot green" type="button" aria-label="Vert" aria-pressed="false" data-color="Vert" data-price="149" data-img="https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=500&q=80"></button>
+                        </div>
+                        <span class="selected-color" aria-live="polite">Orange</span>
+                        <button class="arrow-btn add-to-cart-card" type="button" aria-label="Ajouter Puffer Crop au panier" data-name="Puffer Crop" data-product-id="puffer-crop" data-color="Orange" data-price="149"><i class="fa-solid fa-bag-shopping"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 2 -->
+            <div class="product-card" data-category="new urban">
+                <div class="product-img">
+                    <button class="favorite-toggle" type="button" aria-pressed="false" aria-label="Ajouter Puffer Hood Noir aux favoris">
+                        <i class="fa-regular fa-heart" aria-hidden="true"></i>
+                    </button>
+                    <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=500&q=80" alt="Puffer Hood Noir">
+                </div>
+                <div class="product-info">
+                    <h3>Puffer Hood Noir</h3>
+                    <p>Doudoune à capuche</p>
+                    <div class="card-size-selector" role="group" aria-label="Choisir la taille de Puffer Hood Noir">
+                        <span>Taille</span>
+                        <div class="card-sizes">
+                            <button class="card-size-button active" type="button" data-size="S" aria-pressed="true">S</button>
+                            <button class="card-size-button" type="button" data-size="M" aria-pressed="false">M</button>
+                            <button class="card-size-button" type="button" data-size="L" aria-pressed="false">L</button>
+                            <button class="card-size-button" type="button" data-size="XL" aria-pressed="false">XL</button>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <div class="card-price">
+                            <span class="current">159 €</span>
+                        </div>
+                        <div class="mini-colors">
+                            <button class="dot black active" type="button" aria-label="Noir" aria-pressed="true" data-color="Noir" data-price="159" data-img="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=500&q=80"></button>
+                            <button class="dot cream" type="button" aria-label="Crème" aria-pressed="false" data-color="Crème" data-price="159" data-img="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=500&q=80"></button>
+                            <button class="dot khaki" type="button" aria-label="Kaki" aria-pressed="false" data-color="Kaki" data-price="159" data-img="https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=500&q=80"></button>
+                        </div>
+                        <span class="selected-color" aria-live="polite">Noir</span>
+                        <button class="arrow-btn add-to-cart-card" type="button" aria-label="Ajouter Puffer Hood au panier" data-name="Puffer Hood" data-product-id="puffer-hood" data-color="Noir" data-price="159"><i class="fa-solid fa-bag-shopping"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produit 3 -->
+            <div class="product-card" data-category="premium">
+                <div class="product-img">
+                    <button class="favorite-toggle" type="button" aria-pressed="false" aria-label="Ajouter Puffer Alpine Crème aux favoris">
+                        <i class="fa-regular fa-heart" aria-hidden="true"></i>
+                    </button>
+                    <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=500&q=80" alt="Puffer Alpine Crème">
+                </div>
+                <div class="product-info">
+                    <h3>Puffer Alpine Crème</h3>
+                    <p>Doudoune premium</p>
+                    <div class="card-size-selector" role="group" aria-label="Choisir la taille de Puffer Alpine Crème">
+                        <span>Taille</span>
+                        <div class="card-sizes">
+                            <button class="card-size-button active" type="button" data-size="S" aria-pressed="true">S</button>
+                            <button class="card-size-button" type="button" data-size="M" aria-pressed="false">M</button>
+                            <button class="card-size-button" type="button" data-size="L" aria-pressed="false">L</button>
+                            <button class="card-size-button" type="button" data-size="XL" aria-pressed="false">XL</button>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <div class="card-price">
+                            <span class="current">169 €</span>
+                        </div>
+                        <div class="mini-colors">
+                            <button class="dot cream active" type="button" aria-label="Crème" aria-pressed="true" data-color="Crème" data-price="169" data-img="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=500&q=80"></button>
+                            <button class="dot grey" type="button" aria-label="Gris" aria-pressed="false" data-color="Gris" data-price="169" data-img="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=500&q=80"></button>
+                            <button class="dot black" type="button" aria-label="Noir" aria-pressed="false" data-color="Noir" data-price="169" data-img="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=500&q=80"></button>
+                        </div>
+                        <span class="selected-color" aria-live="polite">Crème</span>
+                        <button class="arrow-btn add-to-cart-card" type="button" aria-label="Ajouter Puffer Alpine au panier" data-name="Puffer Alpine" data-product-id="puffer-alpine" data-color="Crème" data-price="169"><i class="fa-solid fa-bag-shopping"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="favorites-empty" id="favoritesEmpty" role="status" hidden>Vous n’avez pas encore de favoris. Touchez le cœur d’un produit pour le garder ici.</p>
+        <p class="image-disclaimer">Les photographies présentées sont des visuels d’illustration et ne garantissent pas la représentation exacte des produits vendus.</p>
+        <div class="product-details">
+            <details>
+                <summary>Guide des tailles</summary>
+                <p>Les tailles affichées vont du S au XL. Les mesures exactes et conseils de coupe sont à compléter à partir des mesures réelles des produits.</p>
+            </details>
+            <details>
+                <summary>Composition et entretien</summary>
+                <p>La composition textile et les consignes d’entretien doivent être confirmées par le fabricant avant publication.</p>
+            </details>
+            <details>
+                <summary>Livraison et retours</summary>
+                <p>Les zones desservies, délais, frais et conditions de retour doivent être indiqués et confirmés par le vendeur avant toute commande.</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-label="Panier" inert>
+        <div class="cart-header">
+            <h3>Mon panier</h3>
+            <button class="close-cart" id="closeCart" aria-label="Fermer le panier">×</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Votre panier est vide pour le moment.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <strong id="cartTotal">0 €</strong>
+            </div>
+            <p class="demo-note">Le paiement est disponible après configuration et validation du catalogue de la boutique.</p>
+            <button class="checkout-btn" type="button">Continuer la commande</button>
+        </div>
+    </aside>
+
+    <dialog class="checkout-dialog" id="checkoutDialog">
+        <form class="checkout-form" id="checkoutForm">
+            <div class="dialog-heading">
+                <div>
+                    <span class="eyebrow">PAIEMENT SÉCURISÉ</span>
+                    <h2>Finaliser la commande</h2>
+                </div>
+                <button class="close-dialog" type="button" id="closeCheckout" aria-label="Fermer">×</button>
+            </div>
+            <p class="demo-note">Le total final, l’adresse et le paiement seront traités sur la page sécurisée Stripe.</p>
+            <div class="checkout-summary">
+                <span>Sous-total estimé</span>
+                <strong id="checkoutTotal">0 €</strong>
+            </div>
+            <button class="checkout-btn" id="checkoutSubmit" type="submit">Continuer vers le paiement sécurisé</button>
+            <p class="checkout-result" id="checkoutResult" role="status"></p>
+        </form>
+    </dialog>
+
+    <dialog class="account-dialog" id="accountDialog" aria-labelledby="accountTitle">
+        <div class="account-panel">
+            <div class="dialog-heading">
+                <div>
+                    <span class="eyebrow">PUFFER CLUB</span>
+                    <h2 id="accountTitle">Mon compte</h2>
+                </div>
+                <button class="close-dialog" type="button" id="closeAccount" aria-label="Fermer">×</button>
+            </div>
+            <p class="account-demo-note">Un e-mail de confirmation peut être nécessaire avant votre première connexion. Vérifiez aussi vos courriers indésirables.</p>
+            <form class="account-form" id="accountForm">
+                <label for="accountName" id="accountNameLabel">Nom</label>
+                <input id="accountName" name="name" autocomplete="name" required>
+                <label for="accountEmail" id="accountEmailLabel">Adresse e-mail</label>
+                <input id="accountEmail" name="email" type="email" autocomplete="email" required>
+                <label for="accountPassword" id="accountPasswordLabel">Mot de passe (8 caractères minimum)</label>
+                <input id="accountPassword" name="password" type="password" minlength="8" autocomplete="new-password" required>
+                <label for="accountNewPassword" id="accountNewPasswordLabel" hidden>Nouveau mot de passe</label>
+                <input id="accountNewPassword" name="newPassword" type="password" minlength="8" autocomplete="new-password" hidden>
+                <p class="account-message" id="accountMessage" role="status"></p>
+                <button class="checkout-btn" id="accountSubmit" type="submit">Créer mon compte</button>
+                <button class="account-mode-toggle" id="forgotPassword" type="button" hidden>Mot de passe oublié ?</button>
+            </form>
+            <div class="account-profile" id="accountProfile" hidden>
+                <p>Connecté en tant que <strong id="accountProfileName"></strong></p>
+                <p id="accountProfileEmail"></p>
+                <p class="account-message" id="accountProfileMessage" role="status" hidden></p>
+                <button class="checkout-btn account-logout" id="accountLogout" type="button">Se déconnecter</button>
+            </div>
+            <button class="account-mode-toggle" id="accountModeToggle" type="button">Déjà un compte ? Se connecter</button>
+        </div>
+    </dialog>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <i class="fa-solid fa-mountain"></i>
+                    <span>PUFFER CLUB</span>
+                </div>
+                <p>Découvrez les modèles et coloris de Puffer Club.</p>
+            </div>
+            <div class="footer-links">
+                <h4>NAVIGATION</h4>
+                <ul>
+                    <li><a href="#collection">Collection</a></li>
+                    <li><a href="#collection" data-footer-filter="new">Nouveautés</a></li>
+                    <li><a href="#story">Notre Histoire</a></li>
+                    <li><a href="#contact">Coordonnées à compléter avant publication</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h4>INFORMATIONS AVANT LANCEMENT</h4>
+                <p>Les informations légales et commerciales doivent être complétées par le vendeur avant toute vente réelle.</p>
+                <ul class="legal-links">
+                    <li><a href="#legal-notice">Mentions légales</a></li>
+                    <li><a href="#privacy-notice">Confidentialité</a></li>
+                    <li><a href="#sales-terms">Conditions de vente</a></li>
+                    <li><a href="#returns-policy">Retours et remboursements</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="legal-notices">
+            <details id="legal-notice">
+                <summary>Mentions légales — informations à compléter</summary>
+                <p>Avant publication, renseignez la raison sociale, la forme juridique, l’adresse du siège, les coordonnées de contact, le numéro d’immatriculation et les informations d’hébergement applicables.</p>
+            </details>
+            <details id="privacy-notice">
+                <summary>Confidentialité — informations à compléter</summary>
+                <p>Les comptes sont gérés par Supabase. Lors d’une commande, les informations de livraison et de paiement sont demandées par Stripe Checkout; les commandes payées sont enregistrées dans Supabase. Avant toute vente, précisez les finalités, durées de conservation, prestataires, responsables de traitement et droits des personnes selon votre situation.</p>
+            </details>
+            <details id="sales-terms">
+                <summary>Conditions de vente — informations à compléter</summary>
+                <p>Les prix, taxes, moyens de paiement, modalités de commande et coordonnées du vendeur doivent être précisés et vérifiés avant toute vente réelle.</p>
+            </details>
+            <details id="returns-policy">
+                <summary>Retours et remboursements — informations à compléter</summary>
+                <p>Définissez et vérifiez les délais, conditions, frais de retour et modalités de remboursement applicables avant publication.</p>
+            </details>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 PUFFER CLUB.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="/script.js"></script>
+</body>
+</html>
